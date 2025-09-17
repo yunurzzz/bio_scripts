@@ -4,9 +4,9 @@
 import sys
 import os
 import argparse
-import gzip
+#import gzip
 import time
-import logging
+#import logging
 
 
 '''
