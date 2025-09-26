@@ -40,4 +40,4 @@ kegg_result_sorted$qvaluedigit = signif(kegg_result_sorted$qvalue,3)
 kegg_result_sorted$Description = sub("-[^-]*$","",kegg_result_sorted$Description)
 
 #结果写入表格
-write.table(kegg_result_sorted,file="kegg_HFD_up.tsv",sep = "\t",quote = F,row.names = F)
+write.table(kegg_result_sorted,file="kegg_up.tsv",sep = "\t",quote = F,row.names = F)
