@@ -26,7 +26,8 @@ plotPCA(vsd, intgroup=c('condition')) + theme_bw()
 
 dds2 <- DESeq(dds1)
 #注意，需将treat在前，control在后，意为treat相较于control中哪些基因上调/下调
-res <- results(dds2, contrast = c('condition', 'treat', 'ctrl'))summary(res)
+res <- results(dds2, contrast = c('condition', 'treat', 'ctrl'))
+summary(res)
 res_out <- data.frame(res, stringsAsFactors = FALSE, check.names = FALSE)
 
 ##筛选差异表达基因
