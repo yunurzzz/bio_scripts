@@ -21,7 +21,7 @@ coldata <- data.frame(row.names=colnames(dat_adj), condition)
 dds1 <- DESeqDataSetFromMatrix(countData = dat_adj,
                                colData = coldata,
                                design = ~condition)
-vsd <- vst(dds1) 
+vsd <- vst(dds1)
 plotPCA(vsd, intgroup=c('condition')) + theme_bw()
 
 dds2 <- DESeq(dds1)
@@ -31,7 +31,7 @@ summary(res)
 res_out <- data.frame(res, stringsAsFactors = FALSE, check.names = FALSE)
 
 ##筛选差异表达基因
-#首先对表格排个序，按padj值升序排序，相同padj值下继续按log2FC降序排序
+#首先对表格排序，按padj值升序排序，相同padj值下继续按log2FC降序排序
 res_out <- res_out[order(res_out$padj, res_out$log2FoldChange, decreasing = c(FALSE, TRUE)), ]
 write.table(res_out, './deseq2.tsv', col.names = NA, sep = '\t', quote = FALSE)
 
@@ -72,4 +72,3 @@ res_convert_up <- subset(res_convert, sig == 'up')
 res_convert_down <- subset(res_convert, sig == 'down')
 write.table(res_convert_up, file = './deseq2_symbol_up.tsv', sep = '\t', row.names = F, col.names = T, quote = FALSE)
 write.table(res_convert_down, file = './deseq2_symbol_down.tsv', sep = '\t', row.names = F, col.names = T, quote = FALSE)
-
