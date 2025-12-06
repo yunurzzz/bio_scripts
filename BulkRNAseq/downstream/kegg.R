@@ -13,8 +13,6 @@ setwd("yourPath")
 rt = read.table('deseq2_up.tsv',header = T,sep = '\t')
 colnames(rt)[1] <- c("geneid")
 geneid = rt$geneid
-head(geneid)
-
 transid <- bitr(geneid, OrgDb = org.Mm.eg.db, toType = c("ENTREZID","SYMBOL","GENENAME"), fromType = "ENSEMBL")
 
 ekegg <- enrichKEGG(gene = transid$ENTREZID,
@@ -38,6 +36,4 @@ kegg_result$GeneRatio = gene_ratio$gene_ratio
 kegg_result_sorted = kegg_result[order(kegg_result$qvalue),]
 kegg_result_sorted$qvaluedigit = signif(kegg_result_sorted$qvalue,3)
 kegg_result_sorted$Description = sub("-[^-]*$","",kegg_result_sorted$Description)
-
-#结果写入表格
 write.table(kegg_result_sorted,file="kegg_up.tsv",sep = "\t",quote = F,row.names = F)

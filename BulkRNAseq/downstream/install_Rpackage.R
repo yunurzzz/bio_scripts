@@ -1,5 +1,6 @@
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
+
 BiocManager::install("DESeq2")
 BiocManager::install("edgeR")
 #BiocManager::install("limma")
@@ -16,4 +17,3 @@ install.packages("stringr")
 install.packages("dplyr")
 #install.packages("pheatmap")
 install.packages("forcats")
-

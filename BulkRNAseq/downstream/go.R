@@ -14,8 +14,6 @@ setwd("yourPath")
 rt = read.table('deseq2_up.tsv', header = T, sep = '\t')
 colnames(rt)[1] <- c("geneid")
 geneid = rt$geneid
-head(geneid)
-
 transid <- bitr(geneid, OrgDb = org.Mm.eg.db, toType = c("GENENAME","SYMBOL","ENTREZID"), fromType = "ENSEMBL")
 
 ego <- enrichGO(gene = transid$ENTREZID, #ENSEMBL

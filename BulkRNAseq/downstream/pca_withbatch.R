@@ -21,11 +21,11 @@ pcaData <- plotPCA(vsd, intgroup=c("condition", "batch"), returnData=T)
 write.table(pcaData, 'pca_data.tsv', col.names = NA, sep = '\t', quote = FALSE)
 
 pcaData = read.table('pca_data.tsv',header = T, row.names = NULL, check.names = FALSE, sep = '\t')
-pic2 <- ggplot(pcaData, aes(PC1, PC2, color=condition)) + 
+pic2 <- ggplot(pcaData, aes(PC1, PC2, color=condition)) +
   geom_point(aes(color = condition), size = 3) +
   scale_color_manual(values = c('#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf')) +
   #scale_color_manual(values = c('#1b9e77', '#d95f02')) +
-  xlab("PC1: 57%") + ylab("PC2: 19%") +
+  xlab("PC1: ? %") + ylab("PC2: ? %") +
   theme_bw() +
   theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank())#+
   geom_text_repel(aes(label = name), size = 3, show.legend = FALSE,

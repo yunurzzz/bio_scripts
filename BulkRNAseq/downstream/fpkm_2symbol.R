@@ -25,7 +25,6 @@ if (! all(feature_ids %in% rownames(eff_length))){
   msg1 <- sprintf("%i gene is shared, %i gene is specified", tbl[[2]],tbl[[1]])
   warning(msg1)
 }
-
 if (! identical(feature_ids, rownames(eff_length))){
   msg2 <- sprintf("Given GTF file only contain %i gene, but experssion matrix has %i gene", nrow(eff_length), nrow(expMatrix))
   warning(msg2)

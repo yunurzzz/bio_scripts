@@ -28,12 +28,11 @@ pic1
 pic2 <- ggplot(pcaData, aes(x=PC1, y=PC2), color = condition, shape = group)+
   geom_point(aes(color = condition), size = 3.5) +
   scale_color_manual(values = c('#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf')) +
-  xlab("PC1: %") + ylab("PC2: %") +
-  theme_bw() + 
+  xlab("PC1: ?? %") + ylab("PC2: ?? %") +
+  theme_bw() +
   theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank()) +
   geom_text_repel(aes(label = name), size = 2.8, show.legend = FALSE,
                   box.padding = unit(0.5, 'lines'))
 pic2
 
 ggsave(filename = "./pca.pdf", plot=pic2, width = 6, height = 4.2, units = "in", dpi = 300)
-
