@@ -19,7 +19,6 @@ def time_print(info):
 	print("%s %s"%(time.strftime('[%H:%M:%S]',time.localtime(time.time())), info))
 	#logging.info()
 
-
 def get_opts():
 	group = argparse.ArgumentParser()
 	group.add_argument("-s", "--sample_list", help="Input sample file, .gz supported", required=True)
@@ -34,7 +33,6 @@ def get_opts():
 	#group.add_argument("--gzip", help="[0|1], gzip clean data. If run in hardware, donot set this. Default: 0", default=0)
 	group.add_argument("-t", "--threads", help="Number of threads to run this script. Default: 12", default=12, type=int)
 	return group.parse_args()
-
 
 def rnaseq_pipeline(sample, index, fqpath, annotation, outdir, threads):
 	if not os.path.exists(outdir):
@@ -144,7 +142,6 @@ def rnaseq_pipeline(sample, index, fqpath, annotation, outdir, threads):
 	#time_print("gzip done")
 
 	time_print("Finished")
-
 
 if __name__ == "__main__":
 	opts = get_opts()
