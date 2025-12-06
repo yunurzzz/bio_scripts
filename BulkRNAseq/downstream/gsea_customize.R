@@ -1,7 +1,8 @@
 library(clusterProfiler)
 library(enrichplot)
 library(dplyr)
-library(stringr)library(ggplot2)
+library(stringr)
+library(ggplot2)
 
 rm(list = ls())
 options(stringsAsFactors = F)
