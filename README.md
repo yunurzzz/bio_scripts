@@ -1,2 +1,2 @@
-# bio_scripts
+# bioscripts
 several scripts for bioinformatics
